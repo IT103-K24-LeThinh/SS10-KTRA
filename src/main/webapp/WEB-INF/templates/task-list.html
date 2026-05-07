@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+    xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button th:href="task/form">Thêm mới</button>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Deadline</th>
+            <th>Priority</th>
+        </tr>
+        <tr th:each="taskItem : ${taskItemList}">
+            <td th:text="${taskItem.id}"></td>
+            <td th:text="${taskItem.title}"></td>
+            <td th:text="${taskItem.deadline}"></td>
+            <td th:text="${taskItem.priority}"></td>
+        </tr>
+    </table>
+</body>
+</html>
